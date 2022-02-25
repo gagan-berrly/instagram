@@ -1,0 +1,309 @@
+:root{
+    --mobile-media:600px;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    background-color: white;
+}
+
+form .avatar{
+    width: 55px;
+    margin-bottom: 15px;
+}
+
+.nav-item a i{
+    font-size: 30px;
+}
+
+.navbar .container-avatar{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.drop-menu-title{
+    margin-top: 10px;
+}
+
+.navbar .container-avatar, .user-post .container-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 1000px;
+    overflow: hidden;
+    transition: transform 1s;
+}
+
+.navbar .container-avatar img, .user-post .container-avatar img{
+    width: 100%;
+}
+
+.user-post .container-avatar {
+    float: left;
+    margin-right: 15px;
+}
+
+.user-nick{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-nick i{
+    font-size: 20px;
+}
+
+.user-post .user-nick{
+    font-weight: 600;
+    line-height: 35px;
+}
+
+.user-post {
+    margin-bottom: 30px;
+}
+
+.user-post .user-nick a{
+    color:#000000;
+}
+
+.image-container{
+    width: 100%;
+    max-height: 450px;
+    overflow: hidden;
+}
+
+.image-container img{
+    width: 100%;
+}
+
+.user-post .card-body{
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.user-post-container{
+    
+
+}
+*/
+
+.user-post-container__image a > img:hover{
+    cursor: pointer;
+    filter: brightness(70%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card .card-body .user-information{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card .card-body .user-information .card-body__left{
+    width:25%;
+}
+
+.card .card-body .user-information .card-body__left .container-avatar img{
+    border-radius: 100%;
+    width: 100%;
+}
+
+.card .card-body .user-information .card-body__right{
+    margin-left: 60px;
+    margin-top: 15px;
+    width:75%;
+}
+
+.card .card-body .user-information .card-body__right h4{
+    display: inline;
+}
+
+.card .card-body .user-information .card-body__right p{
+    font-weight: 450;
+}
+
+.card .card-body .user-information .card-body__right a{
+    margin-left: 10px;
+    font-size: 23px;
+}
+
+.card .card-body .user-information .card-body__right a:active i{
+    font-size: 21px;
+}
+
+.card .card-body .user-information .card-body__right .card-body__right--features {
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top:10px;
+}
+
+.card .card-body .user-information .card-body__right .card-body__right--features > div p{
+    width: 100px;
+    font-weight: 450;
+    
+}
+
+.card .card-body .user-information .card-body__right .card-body__right--features > div p span{
+    font-weight: 600;
+    padding: 5px;
+}
+
+.user-post .card-body__description{
+    padding: 20px;
+    padding-bottom: 0;
+    padding-top: 5px;
+}
+
+.user-post .card-body__description .like-counter {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.user-post .btn-comments{
+    margin: 20px;
+    margin-left: 11px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.user-post .post-uploated-date{
+    margin: 20px;
+    margin-top: 0;
+    color: rgb(134, 134, 134);
+}
+
+.user-post .card-body__description p a{
+    color: #000000;
+}
+
+.user-post .card-body__description p a span{ 
+        margin-right: 5px;
+}
+
+
+.card-body .card-body__likes{
+    padding: 20px;
+    padding-bottom: 0;
+}
+
+.card-body .card-body__likes img{
+    width: 25px;
+    height: 25px;
+}
+
+.card-body .card-body__likes img:hover{
+    cursor: pointer;
+}
+
+.user-post .card-body__comments{
+    padding: 15px;
+}
+
+.user-post .card-body__comments form {
+    display: flex;
+    flex-direction: row;
+    align-self: start;
+}
+
+.user-post .card-body__comments form p{
+    width: 75%;
+}
+
+.user-post .card-body__comments form p input{
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.comments-container #comment-post-date{
+    color: gray;    
+}
+
+
+.comments-container #comment-delete svg{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 3px;
+    right: 2rem;
+}
+
+.comments-container #comment-delete svg:active{
+    transform: scale(0.9);
+}
+
+.user-post .card-body__comments form button{
+    height: 30px;
+    margin-left: 5px;
+    background-color: #FFFFFF;
+    color: #149DF7;
+    font-weight: 600;
+}
+
+.profile-card-status{
+    background-color: #F8FAFC;
+}
+
+@media (max-width: 600px) {
+
+    .user-post-container{
+        display: grid;
+        grid-template-columns : repeat(3,1fr);
+    }
+
+    .user-post-container .user-post-container__image{
+        width: 100%;
+        padding: .6px;
+
+    }
+    
+    .user-post-container .user-post-container__image a > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+
+    .container{
+        padding: 0;
+    }
+
+    .navbar .container-avatar, .drop-menu-title{
+        margin: 0;
+    }
+
+
+  }
