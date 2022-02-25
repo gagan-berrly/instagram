@@ -14,14 +14,19 @@
               </div>
               <br>
               
-              <form class="form-inline mb-4" method="GET" action="{{ route('user.users') }}" id="user-search">
+              <form class="form-inline mb-1" method="GET" action="{{ route('user.users') }}" id="user-search">
                 <input type="text" id="search" class="form-control mr-sm-2" placeholder="Gagan">
-                <button class="btn btn-outline-success my-2 my-sm-0 btn-search" type="submit">Buscar</button>
+                <button class="btn my-2 my-sm-0 btn-search" type="submit"><i class="bi bi-search"></i></button>
               </form>
 
             @foreach($users as $user)
+            @if($user->image)
             <div class="card border-0 profile-card-status">
+                @if($user->id == Auth::user()->id)
+                <div class="card-body its-me">
+                @else
                 <div class="card-body">
+                @endif
                     <div class="user-information">
                         <div class="card-body__left">
                             @if($user->image)
@@ -32,16 +37,17 @@
                         </div>
                         <div class="card-body__right">
                             <h4 class="card-title"><b>{{ $user->nick }}<b/></h4>
-                                <p>{{'Se unió ' .\FormatTime::LongTimeFilter($user->created_at) }} </p>
+                            <p>{{'Se unió ' .\FormatTime::LongTimeFilter($user->created_at) }} </p>
                             <div class="card-body__right--features">
                                 <div><p><span>{{ count($user->images)}}</span>Posts</p></div>
                             </div>
                             <a class="btn btn-primary btn-sm" href="{{route('user.profile', ['id' => $user->id])}}" style="font-size: 14px;">Ver Perfil</a>
-                            <a class="btn btn-primary btn-sm" href=""                                               style="font-size: 14px;">Follow<!--<i class="bi bi-plus";></i>---></a>
+                            <a class="btn btn-primary btn-sm" href="" style="font-size: 14px;">Follow<!--<i class="bi bi-plus";></i>---></a>
                         </div>
                     </div>
                 </div>
             </div>
+            @endif
             <br>
             @endforeach
         </div>

@@ -84,102 +84,32 @@ form .avatar{
     padding: 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*
 .user-post-container{
+    display: grid;
+    grid-template-columns : repeat(3,1fr);
     
-
-}
-*/
-
-.user-post-container__image a > img:hover{
-    cursor: pointer;
-    filter: brightness(70%);
 }
 
 
+.user-post-container .user-post-container__image{
+    width: 100%;
+    
+}
 
+.profile-card-status .card-body__left .container-avatar img{
+    border-radius: 100%;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.user-post-container .user-post-container__image a > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .card .card-body .user-information{
     display: flex;
-    flex-direction: row;
-    width: 100%;
 }
 
-.card .card-body .user-information .card-body__left{
-    width:25%;
-}
-
-.card .card-body .user-information .card-body__left .container-avatar img{
-    border-radius: 100%;
-    width: 100%;
-}
-
-.card .card-body .user-information .card-body__right{
-    margin-left: 60px;
-    margin-top: 15px;
-    width:75%;
-}
-
-.card .card-body .user-information .card-body__right h4{
-    display: inline;
-}
-
-.card .card-body .user-information .card-body__right p{
-    font-weight: 450;
-}
-
-.card .card-body .user-information .card-body__right a{
-    margin-left: 10px;
-    font-size: 23px;
-}
-
-.card .card-body .user-information .card-body__right a:active i{
-    font-size: 21px;
-}
-
-.card .card-body .user-information .card-body__right .card-body__right--features {
-    width: 20%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top:10px;
-}
-
-.card .card-body .user-information .card-body__right .card-body__right--features > div p{
-    width: 100px;
-    font-weight: 450;
-    
-}
-
-.card .card-body .user-information .card-body__right .card-body__right--features > div p span{
-    font-weight: 600;
-    padding: 5px;
-}
 
 .user-post .card-body__description{
     padding: 20px;
@@ -277,25 +207,42 @@ form .avatar{
     background-color: #F8FAFC;
 }
 
-@media (max-width: 600px) {
+.its-me{
+    border-width: 2.3px;
+    border-style: solid;
+    border-image: 
+        linear-gradient(
+        to bottom, 
+        rgb(0, 145, 255), 
+        rgb(255, 255, 255)
+        ) 1 100%;
+}
 
-    .user-post-container{
-        display: grid;
-        grid-template-columns : repeat(3,1fr);
-    }
+#user-search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 50%;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+}
 
-    .user-post-container .user-post-container__image{
-        width: 100%;
-        padding: .6px;
+#user-search input{
+    width: 70%;
+    margin-left: 10px;
+    border: none;
+    background-color: #EFEFEF;
+    outline: none !important;
+}
 
-    }
-    
-    .user-post-container .user-post-container__image a > img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
+#user-search button{
+    outline: none;
+    border: none;
+    font-size: 18px;
+}
+
+
+@media (max-width: 600px) {  
 
     .container{
         padding: 0;
@@ -305,5 +252,131 @@ form .avatar{
         margin: 0;
     }
 
+    #user-search{
+        width: 80%;
+        margin: auto;
+    }
 
-  }
+    .profile-card-status{
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    .profile-card-status .user-information{
+        flex-direction: flex;
+    }
+
+
+    .profile-card-status .card-body__left .container-avatar{
+        display: block;
+        width: 70px;
+
+    }
+    
+    .profile-card-status .card-body__left .container-avatar img{
+        width: 100px;
+        margin-top: 20px;
+        padding:2px;
+    }
+
+    .profile-card-status .card-body__right{
+        margin-left: 50px;
+    }
+
+    .profile-card-status .card-body__right .card-body__right--features div p span{
+        padding: 5px;
+    }
+
+}
+
+@media (min-width: 601px) {  
+
+    .profile-user-main-container{
+        width: 80%;
+        margin: auto;
+    }
+    
+    .user-post-container{
+        display: grid;
+        grid-template-columns : repeat(3,1fr);
+        grid-gap: 30px;
+        width: 100%;
+        
+    }
+
+    .user-post-container .user-post-container__image{
+        width: 100%;
+        height: 295px;
+    
+    }
+    
+    .user-post-container .user-post-container__image a > img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .verificado{
+        width: 30px;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        object-fit: cover;
+    }
+
+    .card .card-body .user-information{
+        flex-direction: row;
+    }
+
+    .card .card-body .user-information .card-body__left{
+        width:25%;
+    }
+    
+    .card .card-body .user-information .card-body__left .container-avatar img{
+        width: 100%;
+    }
+    
+    .card .card-body .user-information .card-body__right{
+        margin-left: 60px;
+        margin-top: 15px;
+        width:75%;
+    }
+    
+    .card .card-body .user-information .card-body__right h4{
+        display: inline;
+    }
+    
+    .card .card-body .user-information .card-body__right p{
+        font-weight: 450;
+    }
+    
+    .card .card-body .user-information .card-body__right a{
+        margin-left: 10px;
+        font-size: 23px;
+    }
+    
+    .card .card-body .user-information .card-body__right a:active i{
+        font-size: 21px;
+    }
+    
+    .card .card-body .user-information .card-body__right .card-body__right--features {
+        width: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top:10px;
+    }
+    
+    .card .card-body .user-information .card-body__right .card-body__right--features > div p{
+        width: 100px;
+        font-weight: 450;
+        
+    }
+    
+    .card .card-body .user-information .card-body__right .card-body__right--features > div p span{
+        font-weight: 600;
+        padding: 5px;
+    }
+
+}
+

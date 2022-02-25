@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid profile-user-main-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0 profile-card-status">
@@ -17,6 +17,9 @@
                         </div>
                         <div class="card-body__right">
                             <h4 class="card-title"><b>{{ $user->nick }}<b/></h4>
+                            @if(Auth::user()->id == $user->id)
+                                <img src="{{asset('img/verificado.png')}}" class="verificado" alt="">
+                            @endif
                             @if($user->id == Auth::user()->id)
                                 <a href=" {{ route('config') }} " class="btn btn-sm btn-secondary"><i class="bi bi-gear"></i></a>
                             @endif
@@ -51,3 +54,4 @@
 </div>
 @endsection
  
+
