@@ -35,14 +35,14 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse nav-bar-link" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -66,7 +66,7 @@
                             <a href="{{route('user.users')}}" class="nav-link"><i class="bi bi-person-plus-fill"></i></i></a>
                         </li>
 
-                        <li>
+                        <li class="nav-link-user-profile-image">
                             <a href="{{ route('config') }}">@include('includes.avatar')</a>
                         </li>
                             <li class="nav-item dropdown">
