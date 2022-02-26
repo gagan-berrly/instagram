@@ -56,7 +56,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'surname' => 'required|string|max:255',
             'nick' => 'required|string|max:255|unique:users,nick,'.$id, //que sea un campo unico pero puede haber una excepcion, que el nick coincida con el nick que tengo con el id actual 
-            'quote' => 'required|string|max:255',
+            'quote' => 'required|string|max:135',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id //con esto logramos que el id coincida con el usuario que esta idenfiticado
         ]);
 
