@@ -21,34 +21,34 @@
 
             @foreach($users as $user)
             @if($user->image)
-            <div class="card border-0 profile-card-status">
-                @if($user->id == Auth::user()->id)
-                <div class="card-body its-me">
-                @else
-                <div class="card-body">
-                @endif
-                    <div class="user-information">
-                        <div class="card-body__left">
-                            @if($user->image)
-                                <div class="container-avatar">
-                                    <img src="{{ route('user.avatar', ['filename' =>$user->image]) }}" alt="Avatar" class="avatar">
-                                </div>
-                            @endif
-                        </div>
-                        <div class="card-body__right">
-                            <h4 class="card-title"><b>{{ $user->nick }}<b/></h4>
-                            <p>{{'Se unió ' .\FormatTime::LongTimeFilter($user->created_at) }} </p>
-                            <div class="card-body__right--features">
-                                <div><p><span>{{ count($user->images)}}</span>Posts</p></div>
+                <div class="card border-0 profile-card-status">
+                    @if($user->id == Auth::user()->id)
+                    <div class="card-body its-me">
+                    @else
+                    <div class="card-body">
+                    @endif
+                        <div class="user-information">
+                            <div class="card-body__left">
+                                @if($user->image)
+                                    <div class="container-avatar">
+                                        <img src="{{ route('user.avatar', ['filename' =>$user->image]) }}" alt="Avatar" class="avatar">
+                                    </div>
+                                @endif
                             </div>
-                            <a class="btn btn-primary btn-sm" href="{{route('user.profile', ['id' => $user->id])}}" style="font-size: 14px;">Ver Perfil</a>
-                            <a class="btn btn-primary btn-sm" href="" style="font-size: 14px;">Follow<!--<i class="bi bi-plus";></i>---></a>
+                            <div class="card-body__right">
+                                <h4 class="card-title"><b>{{ $user->nick }}<b/></h4>
+                                <p>{{'Se unió ' .\FormatTime::LongTimeFilter($user->created_at) }} </p>
+                                <div class="card-body__right--features">
+                                    <div><p><span>{{ count($user->images)}}</span>Posts</p></div>
+                                </div>
+                                <a class="btn btn-primary btn-sm" href="{{route('user.profile', ['id' => $user->id])}}" style="font-size: 14px;">Ver Perfil</a>
+                                <a class="btn btn-primary btn-sm" href="" style="font-size: 14px;">Follow<!--<i class="bi bi-plus";></i>---></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <br>
             @endif
-            <br>
             @endforeach
         </div>
     </div>

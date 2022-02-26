@@ -4,9 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-
-            <h1>Registrate para fotos de tus amigos</h1>
-
             <div class="card">
                 <div class="card-header">{{ __('Registro') }}</div>
 
@@ -100,7 +97,6 @@
                             </div>
                         </div>
                     </form>
-                    <p>Al registrarte, aceptas nuestras Condiciones.</p>
                 </div>
             </div>
         </div>

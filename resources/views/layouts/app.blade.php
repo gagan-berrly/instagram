@@ -85,6 +85,13 @@
                                         <span>Configuracion</span>
                                    </a>
 
+                                   @if(Auth::user() && Auth::user()->role == 'admin')
+                                   <a class="dropdown-item" href=" {{ route('admin.user') }} ">
+                                        <i class="bi bi-wrench-adjustable-circle-fill" style="font-size:20px;"></i>
+                                        <span>Admin</span>
+                                   </a>
+                                   @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

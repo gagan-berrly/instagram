@@ -11,13 +11,15 @@
 |
 */
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
 use App\Image;
-
+//use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -53,3 +55,8 @@ Route::post('/post/update', [ImageController::class, 'update'])->name('post.upda
 //Rutas Comentarios
 Route::get('/comment/delete{id}', [CommentController::class, 'delete'])->name('comment.delete');
 Route::post('/comment/save', [CommentController::class, 'save'])->name('comment.save');
+
+//Admin Route
+
+Route::get('/admin',[AdminController::class, 'index'])->name('admin.user');
+Route::get('/admin/users',[AdminController::class, 'fetchAllUsers'])->name('admin.user.list');
