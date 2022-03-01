@@ -67,7 +67,7 @@
                         </li>
 
                         <li class="nav-link-user-profile-image">
-                            <a class="nav-link" href="{{ route('config') }}">@include('includes.avatar')</a>
+                            <a href="{{ route('config') }}">@include('includes.avatar')</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle drop-menu-title" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

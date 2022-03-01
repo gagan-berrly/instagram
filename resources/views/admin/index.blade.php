@@ -41,6 +41,7 @@
             <div class="sidebar-button">
                 <i class='bx bx-menu sidebarBtn'></i>
                 <span class="dashboard">Dashboard</span>
+                <a class="ml-1 mt-1" href="{{ route('home') }}"><i class='bx bx-log-out'></i></a>
             </div>
             <div class="search-box">
                 <input type="text" placeholder="Search...">

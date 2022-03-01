@@ -24,6 +24,7 @@
                                 @endif
                             </div>
                         </div>
+                        
 
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contrasenya') }}</label>
@@ -59,6 +60,11 @@
 
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('¿Has olvidado la contraseña?') }}
+                                </a>
+                            </div>
+                            <div class="col-md-8 offset-md-4 mt-3">
+                                <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('¿No tienes cuenta? Regístrate Gratis!') }}
                                 </a>
                             </div>
                         </div>

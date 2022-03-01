@@ -27,14 +27,8 @@ class UserController extends Controller
             ->orderBy('id','desc')
             ->get();
 
-            /*
-            if(count($users) == 0){
-                
-            }
-            */
-
         }else{
-            $users = User::orderBy('id','desc')->get();
+            $users = User::orderBy('id','desc')->limit(5)->get();
         }
 
         return view('user.index', ['users' => $users]);

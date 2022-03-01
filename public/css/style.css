@@ -20,6 +20,10 @@ form .avatar{
     font-size: 30px;
 }
 
+.row{
+    margin-left: 0;
+    margin-right: 0;
+}
 
 .drop-menu-title{
     margin-top: 10px;
@@ -28,9 +32,11 @@ form .avatar{
 .navbar .container-avatar, .user-post .container-avatar{
     width: 40px;
     height: 40px;
+    margin-top: 10px;
     border-radius: 1000px;
+    margin-left: 15px;
+    padding: 0;
     overflow: hidden;
-    transition: transform 1s;
 }
 
 .navbar .container-avatar img, .user-post .container-avatar img{
@@ -95,6 +101,11 @@ form .avatar{
 
 .profile-card-status .card-body__left .container-avatar img{
     border-radius: 100%;
+    width: 100px;
+    height: 100px;
+    margin-top: 25px;
+    object-fit: cover;
+    padding:2px;
 }
 
 .user-post-container .user-post-container__image a > img{
@@ -209,6 +220,8 @@ form .avatar{
 }
 
 .its-me{
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    /*
     border-width: 2.3px;
     border-style: solid;
     border-image: 
@@ -217,6 +230,7 @@ form .avatar{
         rgb(0, 145, 255), 
         rgb(255, 255, 255)
         ) 1 100%;
+    */
 }
 
 #user-search{
@@ -276,6 +290,24 @@ form .avatar{
 }
 
 @media (max-width: 600px) {  
+    
+    .col-md-8{
+        padding: 0;
+    }
+    .card{
+        width: 100%;
+    }
+
+    .card, .car-body, .card-header{
+        border-top: none;
+        border-bottom: none;    
+        border-left: none;
+        border-right: none;
+    }
+
+    .image-container{
+        border-bottom: none;
+    }
 
     .container{
         padding: 0;
@@ -310,14 +342,7 @@ form .avatar{
         width: 90px;
 
     }
-    
-    .profile-card-status .card-body__left .container-avatar img{
-        width: 100px;
-        height: 100px;
-        margin-top: 25px;
-        object-fit: cover;
-        padding:2px;
-    }
+
 
     .profile-card-status .card-body__right{
         margin-left: 50px;
@@ -354,12 +379,14 @@ form .avatar{
     .card .card-body .user-information .card-body__left{
         width: 20%;
         margin-left: 50px;
-    }    
+    }   
+    
     .card .card-body .user-information .card-body__left > .container-avatar img{
         display: block;
-        margin: auto;
-        width: 200px;
-        height: 200px;
+        width: 130px;
+        height: 130px;
+        border-radius: 100%;
+        padding: 5px;
         object-fit: cover;
     }
 
@@ -402,6 +429,15 @@ form .avatar{
 
 
 @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {  
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+    }
+
 
     .profile-user-main-container{
         width: 80%;
@@ -464,11 +500,6 @@ form .avatar{
         font-size: 23px;
     }
     
-    /*
-    .card .card-body .user-information .card-body__right a:active i{
-        font-size: 21px;
-    }
-    */
     
     .card .card-body .user-information .card-body__right .card-body__right--features {
         width: 20%;
@@ -491,7 +522,6 @@ form .avatar{
 
     .navbar .container-avatar{
         margin-left: 25px;
-        margin-top: 10px;
     }
 
     .welcomeview-images{

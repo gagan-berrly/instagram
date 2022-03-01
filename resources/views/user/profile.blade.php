@@ -13,6 +13,10 @@
                                 <div class="container-avatar">
                                     <img src="{{ route('user.avatar', ['filename' =>$user->image]) }}" alt="Avatar" class="avatar">
                                 </div>
+                            @else
+                                <div class="container-avatar">
+                                    <img src="{{ asset('img/default-user.png') }}" alt="Avatar" class="avatar">
+                                </div>
                             @endif
                         </div>
                         <div class="card-body__right">
@@ -25,6 +29,9 @@
                                 @if($user->id == Auth::user()->id)
                                     <a id="config-btn-auth" href=" {{ route('config') }} " class="btn btn-sm btn-primary"><i class="bi bi-gear"></i></a>
                                 @endif
+                                <!--
+                                <a id="" href=" {{ route('config') }} " class="btn btn-sm btn-outline-dark"><i class="bi bi-person-plus-fill"></i></i></a>
+                                --->
                             </div>
                             <div class="card-body__right--features">
                                 <div><p><span>{{ $user->images->count()}}</span>Posts</p></div>

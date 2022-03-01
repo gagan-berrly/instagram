@@ -1,99 +1,72 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fotos</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>Fotos</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 
-    </head>
-    <body>
-        @section('content')
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 mt-5">
+</head>
 
-                    <div class="card border-0">
-                        <div class="card-header border-0 bg-dark text-white">
-                          Bienvenido!
+<body>
+
+
+    @if (Route::has('login'))
+        <section class="banner">
+            <div class="container banner-carousel">
+
+                <div id="carouselExampleSlidesOnly" class="carousel slide banner-carousel--container" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/camera-picture-photo.jpg') }}" alt="Photo with Camera">
                         </div>
-                        <div class="card-body">
-                          <blockquote class="blockquote mb-0">
-                            <p>Comparte tus fotos con otros usuarios!</p>
-                            <footer class="blockquote-footer">Autor <cite title="Source Title">Desconocido</cite></footer>
-                          </blockquote>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/friends-girls.jpg') }}" alt="Girls">
                         </div>
-                      </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/friends-jump.jpg') }}" alt="Friends Jump">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/friends.jpg') }}" alt="Friends">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/girl-photo.jpg') }}" alt="Girl Photo">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/carousel/sunset-girl-photo.jpg') }}" alt="Sunset">
+                        </div>
+                    </div>
+                </div>
 
-                    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-indicators">
-                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                        </div>
-                        <div class="carousel-inner welcomeview-images">
-                          <div class="carousel-item active">
-                            <img src="{{asset('img/connect-friends.jpeg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Comparte!</h5>
-                              <p>Comparte momentos con los demas usuarios!</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{{asset('img/connect.jpeg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Conecta!</h5>
-                              <p>Conecta con otros usuarios!</p>
-                            </div>
-                          </div>
-                          <div class="carousel-item">
-                            <img src="{{asset('img/share-love.jpeg')}}" class="d-block w-100" alt="...">
-                            <div class="carousel-caption d-none d-md-block">
-                              <h5>Dale Like!</h5>
-                              <p>Muestra tu amor a los demas!</p>
-                            </div>
-                          </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="visually-hidden">Next</span>
-                        </button>
-                      </div>
-            
-                    <div class="login-register-buttons">
-                        @if (Route::has('login'))
-                            <div>
-                                @auth
-                                    
-                                    <button type="button" class="btn btn-outline-primary"><a href="{{ url('/home') }}">Home</a></button>
-                                @else
-                                    
-                                    <button type="button" class="btn btn-primary"><a href="{{ route('login') }}">Login</a> </button>
-                                    <button type="button" class="btn btn-primary"><a href="{{ route('register') }}">Register</a> </button>
-                                    
-                                @endauth
-                            </div>
-                        @endif
+                <div class="banner-text">
+                    <h1>Laravel</h1>
+                    <p>Comparte fotos, comparte momentos<br> <strong>Empieza ahora con Laravel</strong></p>
+                    <div class="banner-text--buttons">
+                        @auth
+                            <button><a href="{{ url('/home') }}">Volver</a></button>
+                        @else
+                            <button><a href="{{ route('login') }}">Iniciar Session</a></button>
+                            <button><a href="{{ route('register') }}">Registrarse</a></button>
+                        @endauth
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    @endif
+</body>
 
-
-       
-        
-    </body>
 </html>

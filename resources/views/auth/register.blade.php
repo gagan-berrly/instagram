@@ -25,6 +25,7 @@
                             </div>
                         </div>
 
+
                         <div class="form-group row">
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
@@ -95,6 +96,12 @@
                                     {{ __('Registrar') }}
                                 </button>
                             </div>
+                        </div>
+
+                        <div class="col-md-8 offset-md-4 mt-3">
+                            <a class="btn btn-link" href="{{ route('login') }}">
+                                {{ __('¿Tienes una cuenta? Accede a ella!') }}
+                            </a>
                         </div>
                     </form>
                 </div>

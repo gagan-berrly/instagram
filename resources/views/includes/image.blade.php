@@ -5,7 +5,11 @@
             <div class="container-avatar">
                 <img src="{{ route('user.avatar', ['filename' =>$image->user->image]) }}" alt="Avatar" class="avatar">
             </div>
-        @endif
+        @else
+        <div class="container-avatar">
+            <img src="{{ asset('img/default-user.png') }}" alt="Avatar" class="avatar">
+        </div>
+        @endif  
         <div class="user-nick">
             <a href="{{ route('user.profile', ['id'=>$image->user->id]) }}">
                 {{ $image->user->nick }}
