@@ -4,7 +4,6 @@ use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;   
 use Illuminate\Support\Facades\DB; 
-use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,18 +15,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        /*
-        for ($i=0; $i <=30 ; $i++) { 
-            $faker = Factory::create();
+        
+        for ($i=0; $i <=75 ; $i++) { 
+            $faker = Factory::create('es_ES');
             DB::table('users')->insert([
                 'role' => 'user',
-                'name' => $faker->name,
-                'surname' => $faker->name,
-                'surname' => Str::random(10),
+                'name' => $faker->firstName(),
+                'surname' => $faker->lastName,
+                'nick' => strtolower($faker->firstName().rand(1,100)),
+                'quote' => $faker->realText(rand(50,100)),
                 'email' => $faker->email,
                 'password' => Hash::make('password'),
+                'created_at' => $faker->dateTimeThisMonth(),
+                'updated_at' => $faker->dateTimeThisMonth()
             ]);
         }
-        */
+        
     }
 }

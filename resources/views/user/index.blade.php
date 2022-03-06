@@ -67,7 +67,11 @@
                 </div>
                 <br>
                 @endforeach
+                @if(!count($users) <= 0)
                 <button class="btn btn-outline-primary btn-block my-2 mb-3 p-2" style="width:200px;margin:auto;" type="submit">Ver +</button>
+                @else
+                No se ha encontrado ningun resultado
+                @endif
         </div>
     </div>
 </div>
