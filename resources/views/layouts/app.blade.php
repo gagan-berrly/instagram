@@ -15,11 +15,6 @@
     <script src="{{ asset('js/main.js') }}" defer></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -91,7 +86,7 @@
                                    </a>
 
                                    @if(Auth::user() && Auth::user()->role == 'admin')
-                                   <a class="dropdown-item" href=" {{ route('admin.user') }} ">
+                                   <a class="dropdown-item" href=" {{ route('admin.user') }} " target="_blank">
                                         <i class="bi bi-wrench-adjustable-circle-fill" style="font-size:20px;"></i>
                                         <span>Admin</span>
                                    </a>
