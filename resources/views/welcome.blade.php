@@ -33,16 +33,16 @@
 
     
     @if (Route::has('login'))
-    <div class="container">
-        <div class="language-select">
-            <select class="b-0" id="select_lang">
-            <option>Castellano</option>
-            <option>Catalan</option>
-            <option>Ingles</option>
-            </select>
-        </div>
+    <div class="language-select">
+        <select class="b-0" id="select_lang">
+        <option value="es">Castellano</option>
+        <option value="ca">Catalan</option>
+        <option value="en">Ingles</option>
+        </select>
+    </div>
+    <div class="container card">
         <div>
-            <h1 class="app_name">Nombre de la app</h1>
+            <h1 class="app_name">Instagram</h1>
             <p class="eslogan">Poner un eslogan</p>
         </div>
         @auth
@@ -56,12 +56,12 @@
                 </a>
             </div>
         @endauth
-        <footer>
-            <p>Made with</p>
-            <img src="{{ asset('img/laravel-icon.png') }}" alt="Avatar" class="avatar">
-        </footer>
     </div>
     @endif
-
+    <footer>
+        <p>Made with</p>
+        <a href="https://laravel.com/" target="_blank">
+        <img src="{{ asset('img/laravel-icon.png') }}" alt="Avatar" class="avatar"></a>
+    </footer>
 </body>
 </html>

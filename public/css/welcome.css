@@ -4,55 +4,81 @@
     
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-body {
-    font-family:Roboto,Helvetica,Arial,sans-serif;
+.container .card a{
+    text-align: center;
+    color: #000000;
+}
+
+.container .card a span{
+    color:#0095f6;
+    font-weight: 600;
+}
+
+.language-select{
+    text-align: center;
+    margin: 16px 16px 6px;
+}
+
+.language-select select{
+    border: none;
+    padding: 5px;
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+.container .app_name, .container .eslogan{
+    text-align: center;
+    margin: 22px auto 12px;
+}
+footer{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p{
+    font-size: 10px;
 }
 
 
 @media (max-width: 768px) { 
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    
+    .card{
+        border: none;
+        border: 0;
     }
-
     .container .card{
         border: 0;
     }
 
-    .container .card a{
-        text-align: center;
-        color: #000000;
-    }
-
-    .container .card a span{
-        color:#0095f6;
-        font-weight: 600;
-    }
-
-    .container .language-select{
-        text-align: center;
-        margin: 16px 16px 6px;
-    }
-
-    .container .language-select select{
-        border: none;
-        padding: 5px;
-        background-color: #FFFFFF;
-    }
-    .container .app_name, .container .eslogan{
-        text-align: center;
-        margin: 22px auto 12px;
-    }
-
     footer{
         margin-top: 6.8rem;
-        text-align: center;
     }
 
     footer img{
         width: 27px;
     }
 
+}
+@media (min-width: 769px) { 
+
+    .container{
+        max-width: 375px;
+        margin: auto;
+        padding: 20px;
+        margin-top: 4rem;
+    }
+
+    footer img{
+        width: 40px;
+    }
 }
