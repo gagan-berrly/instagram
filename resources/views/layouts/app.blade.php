@@ -46,10 +46,10 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sessión') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('login.login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Regístro') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('register.register') }}</a>
                             </li>
                         @else
                         <li class="nav-item">
@@ -106,6 +106,9 @@
                                 </div>
                             </li>
                         @endguest
+                        
+                        @include('includes.translate')
+
                     </ul>
                 </div>
             </div>

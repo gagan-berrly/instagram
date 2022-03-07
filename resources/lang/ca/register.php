@@ -1,11 +1,12 @@
 <?php
 
 return [
-    'slogan' => '',
-    'login' => 'Iniciar Sessión',
-    'register' => 'Registro',
-    'register_future' => 'Regístrate',
-    'user_not_account' => '¿No tienes una cuenta?',
-    'made_with' => 'Desarollado con',
-
+    'name' => 'Nom',
+    'surname' => 'Cognoms',
+    'nick' => 'Nom d\'usuari',
+    'email' => 'Correu Electrònic',
+    'password' => 'Contrasenya',
+    'confirm_password' => 'Confirmar Contrasenya',
+    'register' => 'Registre',
+    'user_have_account' => 'Tens un compte? Inicia sessió'
 ];

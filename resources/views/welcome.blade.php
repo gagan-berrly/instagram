@@ -33,13 +33,12 @@
 
     
     @if (Route::has('login'))
+    
     <div class="language-select">
-        <select class="b-0" id="select_lang">
-        <option value="es">Castellano</option>
-        <option value="ca">Catalan</option>
-        <option value="en">Ingles</option>
-        </select>
+        @include('includes.translate')
     </div>
+    
+    
     <div class="container card">
         <div>
             <h1 class="app_name">Instagram</h1>
@@ -48,18 +47,17 @@
         @auth
             <a class="btn btn-primary" href="{{ url('/home') }}">Volver</a>
         @else
-            <a class="btn btn-primary" href="{{ route('login') }}" disabled>Iniciar Sessión</a>
+            <a class="btn btn-primary" href="{{ route('login') }}" disabled>{{__('login.login')}}</a>
             <div class="card mt-3 p-2">
                 <a class="btn btn-link" href="{{ route('register') }}">
-                    ¿No tienes una cuenta? 
-                    <span>{{ __('Regístrate') }}</span>
+                    {{__('login.user_not_have_account')}} 
                 </a>
             </div>
         @endauth
     </div>
     @endif
     <footer>
-        <p>Made with</p>
+        <p>{{__('welcome.made_with')}}</p>
         <a href="https://laravel.com/" target="_blank">
         <img src="{{ asset('img/laravel-icon.png') }}" alt="Avatar" class="avatar"></a>
     </footer>
