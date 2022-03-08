@@ -1,19 +1,19 @@
-window.addEventListener("load", function() {
-    
+window.addEventListener("load", function () {
+
     //Boton like
-    function like(){
-        
-        $('.btn-like').unbind('click').click(function() {
+    function like() {
+
+        $('.btn-like').unbind('click').click(function () {
             $(this).addClass('btn-dislike').removeClass('btn-like');
             $(this).attr('src', '/img/heart-red.png');
 
             $.ajax({
-                url:"/like/"+$(this).data('id'),
+                url: "/like/" + $(this).data('id'),
                 type: 'GET',
-                success: function(response){
-                    if(response.like){
+                success: function (response) {
+                    if (response.like) {
                         console.log("Has dado like a la publicacion");
-                    }else{
+                    } else {
                         console.log("Error al dar like");
                     }
                 }
@@ -26,18 +26,18 @@ window.addEventListener("load", function() {
 
     //Boton dislike
     function dislike() {
-        
-        $('.btn-dislike').unbind('click').click(function() {
+
+        $('.btn-dislike').unbind('click').click(function () {
             $(this).addClass('btn-like').removeClass('btn-dislike');
             $(this).attr('src', '/img/heart-black.png');
 
             $.ajax({
-                url:"/dislike/"+$(this).data('id'),
+                url: "/dislike/" + $(this).data('id'),
                 type: 'GET',
-                success: function(response){
-                    if(response.like){
+                success: function (response) {
+                    if (response.like) {
                         console.log("Has dado dislike a la publicacion");
-                    }else{
+                    } else {
                         console.log("Error al dar dislike");
                     }
                 }
@@ -49,11 +49,15 @@ window.addEventListener("load", function() {
 
     dislike();
 
-
     //Buscador
-    $('#user-search').submit(function(){
-        $(this).attr('action', '/discover/users/'+$('#user-search #search').val());
-        
-    })
+    $('#user-search').submit(function () {
+        $(this).attr('action', '/discover/users/' + $('#user-search #search').val());
+
+    });
+
+    $("#visibility-icon").click(function () {
+        $(".bi").toggleClass("bi-eye-slash-fill");
+    });
+
 
 });

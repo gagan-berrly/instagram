@@ -30,36 +30,65 @@
 </head>
 
 <body>
-
     
-    @if (Route::has('login'))
-    
-    <div class="language-select">
-        @include('includes.translate')
-    </div>
-    
-    
-    <div class="container card">
-        <div>
-            <h1 class="app_name">Instagram</h1>
-            <p class="eslogan">Poner un eslogan</p>
-        </div>
-        @auth
-            <a class="btn btn-primary" href="{{ url('/home') }}">Volver</a>
-        @else
-            <a class="btn btn-primary" href="{{ route('login') }}" disabled>{{__('login.login')}}</a>
-            <div class="card mt-3 p-2">
-                <a class="btn btn-link" href="{{ route('register') }}">
-                    {{__('login.user_not_have_account')}} 
-                </a>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link active" href="{{ route('about') }}">{{ __('welcome.about') }}</a>
+                </div>
             </div>
-        @endauth
-    </div>
+        </nav>
+    </header>
+
+    @if (Route::has('login'))
+        <div class="container card">
+            @auth
+                <div class="card mb-2">
+                    @if (Auth::user()->image)
+                        <div class="logged-user-image">
+                            <img src="{{ route('user.avatar', ['filename' => Auth::user()->image]) }}" alt="Avatar"
+                                class="avatar">
+                        </div>
+                    @else
+                        <div class="container-avatar">
+                            <img src="{{ asset('img/default-user.png') }}" alt="Avatar" class="avatar">
+                        </div>
+                    @endif
+                    <p class="text-center mt-2 mb-2">{{ Auth::user()->nick }}</p>
+                </div>
+                <a class="btn btn-primary" href="{{ url('/home') }}">Volver</a>
+            @else
+            <img src="{{ asset('img/app-icon.png') }}" id="app-icon" class="d-inline-block align-top" alt="">
+                <div>
+                    <h1 class="app_name">Laravel</h1>
+                    <p class="eslogan">{{ __('welcome.slogan') }}</p>
+                    <br>
+                </div>
+                <a class="btn btn-primary" href="{{ route('login') }}" disabled>{{ __('login.login') }}</a>
+                <div class="card mt-3 p-2">
+                    <a class="btn btn-link" href="{{ route('register') }}">
+                        {{ __('login.user_not_have_account') }}
+                    </a>
+                </div>
+                @include('includes.translate')
+            @endauth
+        </div>
     @endif
+    <!--
+    <a href="https://www.flaticon.com/free-icons/people" target="_blank" title="people icons">Eucalyp - Flaticon</a>
+    --->
     <footer>
-        <p>{{__('welcome.made_with')}}</p>
-        <a href="https://laravel.com/" target="_blank">
-        <img src="{{ asset('img/laravel-icon.png') }}" alt="Avatar" class="avatar"></a>
+        <div>
+            <p>{{ __('welcome.made_with') }}</p>
+            <a href="https://laravel.com/" target="_blank">
+                <img src="{{ asset('img/laravel-icon.png') }}" alt="Avatar" class="avatar"></a>
+        </div>
     </footer>
 </body>
+
 </html>

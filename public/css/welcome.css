@@ -4,6 +4,56 @@
     
 }
 
+header{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image: linear-gradient(#fe7763, #fc3a5d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#app-icon{
+    display: block;
+    margin: 1rem auto;
+    width: 90px;
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% { transform: translate(7,  0px); }
+    50%  { transform: translate(10px, 15px); }
+    100%   { transform: translate(-7, -0px); }   
+}
+  
+
+li{
+    margin: 16px 16px 6px;
+}
+
+li, li .dropdown-menu{
+    position: absolute;
+    list-style: none;
+    left: 0;
+    right: 0;
+    text-align: center; 
+    color: #0095f6;   
+    font-weight: 600;
+}
+
+.dropdown-menu{
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    z-index: 2;
+    
+}
+
 .container{
     display: flex;
     flex-direction: column;
@@ -20,11 +70,6 @@
     font-weight: 600;
 }
 
-.language-select{
-    text-align: center;
-    margin: 16px 16px 6px;
-}
-
 .language-select select{
     border: none;
     padding: 5px;
@@ -36,9 +81,10 @@
     text-align: center;
     margin: 22px auto 12px;
 }
+
 footer{
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     left: 0;
     right: 0;
     padding: 10px;
@@ -49,8 +95,17 @@ footer p{
     font-size: 10px;
 }
 
+footer .credits{
+    width: 300px;
+}
+
 
 @media (max-width: 768px) { 
+
+    li{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
     
     .card{
         border: none;
@@ -73,12 +128,37 @@ footer p{
 
     .container{
         max-width: 375px;
+        height: 450px;
         margin: auto;
         padding: 20px;
         margin-top: 4rem;
     }
 
+    li{
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+
+    .card{
+        border: none;
+    }
+
     footer img{
         width: 40px;
     }
+}
+
+.logged-user-image img{
+    display: block;
+    margin: auto;
+    width: 200px;
+    border-radius: 100%;
+    padding: 5px;
+}
+
+.bg-gradient{
+    background-image: linear-gradient(#fe7763, #fc3a5d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }

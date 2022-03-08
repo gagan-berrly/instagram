@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
@@ -24,13 +25,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 
 // Rutas generales
 Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 //Rutas usuarios
 Route::get('/configuration', [UserController::class, 'config'])->name('config');
@@ -63,3 +65,4 @@ Route::get('/admin/users',[AdminController::class, 'fetchAllUsers'])->name('admi
 
 //Language
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'LanguageController@switchLang']);
+

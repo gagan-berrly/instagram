@@ -27,4 +27,5 @@ class HomeController extends Controller
         $images = Image::orderBy('created_at', 'desc')->get();
         return view('home',['images' => $images]);
     }
+
 }

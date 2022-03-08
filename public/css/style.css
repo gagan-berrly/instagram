@@ -11,6 +11,10 @@ body{
     background-color: white;
 }
 
+input[type="checkbox"]{
+    display: none;
+}
+
 form .avatar{
     width: 55px;
     margin-bottom: 15px;
@@ -19,6 +23,14 @@ form .avatar{
 .nav-item a i{
     font-size: 30px;
 }
+
+/*
+#app nav{
+    background-image: linear-gradient(#fe7763, #fc3a5d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+*/
 
 .row{
     margin-left: 0;
@@ -221,6 +233,9 @@ form .avatar{
 
 .its-me{
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    /*background-image: linear-gradient(#fe7763, #fc3a5d);
+    bbackground-repeat: no-repeat;
+    background-attachment: fixed;*/
     /*
     border-width: 2.3px;
     border-style: solid;
@@ -289,9 +304,11 @@ form .avatar{
     font-weight: 600;
 }
 
+/*
 input[type="checkbox"]{
     display: none;
 }
+*/
 
 .eye-show{
     font-size: 25px;
@@ -558,4 +575,19 @@ input[type="checkbox"]{
     
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

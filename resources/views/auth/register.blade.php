@@ -96,6 +96,14 @@
                                     {{ __('register.register') }}
                                 </button>
                             </div>
+                            <div class="col-md-6 offset-md-4">
+                                {{__('register.terms_conditions_notify')}}
+                            </div>
+                            <div class="col-md-8 offset-md-4 mt-3">
+                                <a class="btn btn-link" href="">
+                                    {{__('register.terms_conditions')}} 
+                                </a>
+                            </div>
                         </div>
 
                         <div class="col-md-8 offset-md-4 mt-3">
@@ -103,6 +111,8 @@
                                 {{ __('register.user_have_account') }}
                             </a>
                         </div>
+
+                        
                     </form>
                 </div>
             </div>
