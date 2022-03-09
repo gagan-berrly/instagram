@@ -12,40 +12,51 @@
                             @csrf
 
                             <div class="form-group row">
-                                <label for="email" class="col-sm-4 col-form-label text-md-right"><i class="bi bi-person-circle"></i></label>
+                                <label for="email" class="col-sm-4 col-form-label text-md-right"><i
+                                        class="bi bi-person-circle"></i></label>
 
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
                                         value="{{ old('email') }}" required autofocus>
-
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
                             </div>
 
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right"><i class="bi bi-key-fill"></i></label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right"><i
+                                        class="bi bi-key-fill"></i></label>
 
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                         name="password" required>
-                                    @if ($errors->has('password'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
-                                    @endif
                                 </div>
+
                                 <div class="show-password">
                                     <label for="password-show"><i id="visibility-icon"
                                             class="bi bi-eye-fill eye-show"></i></label>
                                     <input type="checkbox" onclick="showPassword()" name="password-show" id="password-show">
                                 </div>
+                            </div>
+
+                            <!--ERRORS-->
+                            <div class="alert-message">
+                                <div class="col-sm-12">
+                                    @if ($errors->has('email'))
+                                        <div class="alert alert-danger mt-2">
+                                            <span>
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        </div>
+                                    @endif
+                                </div>
+        
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group row">
@@ -55,13 +66,14 @@
                                             {{ old('remember') ? 'checked' : '' }}>
 
                                         <!--
-                                            <label class="form-check-label" for="remember">
-                                                {{-- __('Recordar datos') --}}
-                                            </label>
-                                            --->
+                                                        <label class="form-check-label" for="remember">
+                                                            {{-- __('Recordar datos') --}}
+                                                        </label>
+                                                        --->
                                     </div>
                                 </div>
                             </div>
+
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
@@ -95,5 +107,7 @@
                 passwordInput.type = "password";
             }
         }
+   
+
     </script>
 @endsection

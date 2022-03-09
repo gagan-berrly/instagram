@@ -19,13 +19,12 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\WelcomeController;
 use App\Image;
 //use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [WelcomeController::class,'index'])->name('welcome');
 
 Auth::routes();
 

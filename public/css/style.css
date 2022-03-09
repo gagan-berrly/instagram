@@ -333,6 +333,10 @@ input[type="checkbox"]{
     transition: all 0.3s ease-in-out;
 }
 
+.alert-danger{
+    text-align: center;
+}
+
 @media (max-width: 600px) {  
     
     .col-md-8{
@@ -467,6 +471,22 @@ input[type="checkbox"]{
         margin-top: 30px;
         font-size: 18px;
     }
+
+    .navbar .sunshine-user{
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+    }
+
+    .navbar .sunshine-user a i{
+        color:rgb(255, 255, 78); 
+        opacity:0.9;
+        background-image: linear-gradient(#fe7763, #fc3a5d); 
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+
+    }
     
 
 }
@@ -576,7 +596,11 @@ input[type="checkbox"]{
 
 }
 
-
+@keyframes floating {
+    0% { transform: translate(5,  0px); opacity: 0.5;}
+    50%  { transform: translate(10px, 3px); opacity: 1;}
+    100%  { transform: translate(-5, -0px); opacity: 0.5;}   
+}
 
 
 

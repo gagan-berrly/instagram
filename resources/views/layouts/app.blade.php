@@ -27,7 +27,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}" style="color:#00106a; font-size:25px;">
+                <a class="navbar-brand" href="{{ route('welcome') }}" style="color:#00106a; font-size:25px;">
                     Laravel
                 </a>
                 
@@ -52,6 +52,9 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('register.register') }}</a>
                             </li>
                         @else
+                        <li class="nav-item sunshine-user">
+                            <a href="{{route('welcome')}}" class="nav-link"><i class="bi bi-stars"></i></a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}"><i class="bi bi-house-door-fill"></i></a>
                         </li>

@@ -44,7 +44,7 @@
                 </div>
             </div>
             <hr>
-            
+          
             <div class="user-post-container">
                 @foreach($user->images as $image)
                 <div class="user-post-container__image">
@@ -57,7 +57,7 @@
                     </a>
                 </div>
                 @endforeach
-              </div>
+            </div>
 
         </div>
     </div>
