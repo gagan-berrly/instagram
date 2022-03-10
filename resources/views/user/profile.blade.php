@@ -41,15 +41,21 @@
           
             <div class="user-post-container">
                 @foreach($user->images as $image)
-                <div class="user-post-container__image">
-                    <a href="{{ route('image.detail', ['id' =>$image->id]) }}">
+                <a href="{{ route('image.detail', ['id' =>$image->id]) }}" class="user-post-container--post">
+                    <figure class="user-post-container--image">
                         <img
                             src="{{ route('image.file', ['filename' => $image->image_path]) }}"
                             class=""
                             alt=""
                         />
-                    </a>
-                </div>
+                    </figure>
+                    <span class="user-post-hover">
+                        <p>
+                            <span class="user-post-likes"><i style="font-size:20px;" class="bi bi-heart"></i> {{count($image->likes)}} </span>
+                            <span class="user-post-comments"><i style="font-size:20px;" class="bi bi-chat-square"></i> {{count($image->comments)}} </span>
+                        </p>
+                    </span>
+                </a>
                 @endforeach
             </div>
 
