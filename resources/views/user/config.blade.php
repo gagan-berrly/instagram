@@ -1,121 +1,162 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
 
-            @include('includes.message')
+                @include('includes.message')
 
-            <div class="card">
-                <div class="card-header">Configuracion de mi cuenta</div>
+                <div class="card">
+                    <div class="card-header">Configuracion de mi cuenta</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data" aria-label="Configuracion de mi cuenta">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ Auth::user()->name }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data"
+                            aria-label="Configuracion de mi cuenta">
+                            @csrf
+                            <div class="form-group row mb-1 text-right">
+                                <div class="col-md-8 offset-md-4">
+                                    <button type="submit" class="btn btn-primary">
+                                        Guardar Canvios
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="surname" type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" value="{{ Auth::user()->surname }}" required autofocus>
-
-                                @if ($errors->has('surname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('surname') }}</strong>
-                                    </span>
-                                @endif
+                            
+                            <p id="image-preview" style="font-size:18px; font-weight:600;" class="text-center"></p>
+                            <div id ="preview-container">
+                            <img id="output" style="display:block; padding:10px; margin-left:auto; margin-right:auto; margin-top:30px; margin-bottom:30px; width:200px; border-radius:50%;"/>
                             </div>
-                        </div>
+                            
 
-                        <div class="form-group row">
-                            <label for="nick" class="col-md-4 col-form-label text-md-right">{{ __('Nick') }}</label>
+                            <div class="form-group row">
 
-                            <div class="col-md-6">
-                                <input id="nick" type="text" class="form-control{{ $errors->has('nick') ? ' is-invalid' : '' }}" name="nick" value="{{ Auth::user()->nick }}" required autofocus>
+                                <label for="image_path"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Current Image') }}</label>
 
-                                @if ($errors->has('nick'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('nick') }}</strong>
-                                    </span>
-                                @endif
+                                <div class="col-md-6">
+                                    @include('includes.avatar')
+
+
+                                    <label for="image_path" class="btn" ><i style="font-size:30px; font-style: normal;" id="upload-btn"class="bi bi-cloud-arrow-up-fill"></i></label>
+                                    <input id="image_path" type="file"
+                                        class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}"
+                                        name="image_path" style="visibility:hidden; position:absolute;" onchange="loadFile(event)">
+
+
+                                    @if ($errors->has('image_path'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('image_path') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="quote" class="col-md-4 col-form-label text-md-right">{{ __('Biografia') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="quote" type="text" class="form-control{{ $errors->has('quote') ? ' is-invalid' : '' }}" name="quote" value="{{ Auth::user()->quote }}" required autofocus>
+                            <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
-                                @if ($errors->has('quote'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('quote') }}</strong>
-                                    </span>
-                                @endif
+                                <div class="col-md-6">
+                                    <input id="name" type="text"
+                                        class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name"
+                                        value="{{ Auth::user()->name }}" required autofocus>
+
+                                    @if ($errors->has('name'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
+                            <div class="form-group row">
+                                <label for="surname"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ Auth::user()->email }}" required>
+                                <div class="col-md-6">
+                                    <input id="surname" type="text"
+                                        class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}"
+                                        name="surname" value="{{ Auth::user()->surname }}" required autofocus>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                    @if ($errors->has('surname'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('surname') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
+                            <div class="form-group row">
+                                <label for="nick" class="col-md-4 col-form-label text-md-right">{{ __('Nick') }}</label>
 
-                            <label for="image_path" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
+                                <div class="col-md-6">
+                                    <input id="nick" type="text"
+                                        class="form-control{{ $errors->has('nick') ? ' is-invalid' : '' }}" name="nick"
+                                        value="{{ Auth::user()->nick }}" required autofocus>
 
-                            <div class="col-md-6">
-
-                                @include('includes.avatar')
-
-                                <input id="image_path" type="file" class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}" name="image_path">
-
-
-                                @if ($errors->has('image_path'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('image_path') }}</strong>
-                                    </span>
-                                @endif
+                                    @if ($errors->has('nick'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('nick') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Guardar Canvios
-                                </button>
-                               
+                            <div class="form-group row">
+                                <label for="quote"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Biografia') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="quote" type="text"
+                                        class="form-control{{ $errors->has('quote') ? ' is-invalid' : '' }}" name="quote"
+                                        value="{{ Auth::user()->quote }}" required autofocus>
+
+                                    @if ($errors->has('quote'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('quote') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
-                    </form> 
+
+                            <div class="form-group row">
+                                <label for="email"
+                                    class="col-md-4 col-form-label text-md-right">{{ __('Correo electrónico') }}</label>
+
+                                <div class="col-md-6">
+                                    <input id="email" type="email"
+                                        class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                                        value="{{ Auth::user()->email }}" required>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <script type="text/javascript">
+            var upload = document.getElementById('upload-btn');
+            upload.innerHTML = " Upload Image ";
+        var loadFile = function(event) {
+            var output = document.getElementById('output');
+            var preview = document.getElementById('image-preview');
+            var preview_container = document.getElementById('preview-container');
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.style.height = '200px';
+            preview.innerHTML = " Image Preview ";
+            preview_container.style.backgroundColor = '#E2E2E2';
+            output.onload = function() {
+                output.style.removeProperty('height');
+                URL.revokeObjectURL(output.src) // free memory
+            }
+
+        };
+    </script>
 @endsection
- 
