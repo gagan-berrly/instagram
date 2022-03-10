@@ -22,10 +22,6 @@
                         <div class="card-body__right">
                             <div id="header-card">
                                 <h4 class="card-title"><b>{{ $user->nick }}<b/></h4>
-                                @if(Auth::user()->id == $user->id)
-                                <div id="verified-image"><img  src="{{asset('img/verificado.png')}}" class="verificado" alt=""></div>
-                                    
-                                @endif
                                 @if($user->id == Auth::user()->id)
                                     <a id="config-btn-auth" href=" {{ route('config') }} " class="btn btn-sm btn-primary"><i class="bi bi-gear"></i></a>
                                 @endif
@@ -36,9 +32,7 @@
                             <div class="card-body__right--features">
                                 <div><p><span>{{ $user->images->count()}}</span>Posts</p></div>
                             </div>
-                            @if($user->quote)
-                                <p id="user-quote">{{ $user->quote }}</p>
-                            @endif
+                            
                         </div>
                     </div>
                 </div>

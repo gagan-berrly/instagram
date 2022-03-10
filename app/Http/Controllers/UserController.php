@@ -82,7 +82,7 @@ class UserController extends Controller
         }
 
         //Ejecutar consulta y canvios en la base de datos
-        $user->update()->risize(500,500);
+        $user->update();
         return redirect()->route('config')
                         ->with(['message' => 'Los datos del usuario se han actualizado correctamente']);
         
