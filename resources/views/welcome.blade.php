@@ -51,16 +51,23 @@
         <div class="shunshine-container__left-gallery">
             <div class="floating-users">
                 <div class="image-column">
-                    <img class="posts-image" src="{{ asset('img/profile/user-1.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-2.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-3.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-4.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-5.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-6.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-7.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="">
-                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="">            
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-1.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-2.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-3.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-4.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-5.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-6.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-7.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-7.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
                 </div>
             </div>
         </div>
@@ -108,9 +115,10 @@
     --->
     <footer>
         <div>
-            <p>{{ __('welcome.made_with') }}</p>
+            <!---<p>{{-- __('welcome.made_with') --}}</p>--->
             <a href="https://laravel.com/" target="_blank">
-                <img src="{{ asset('img/laravel.svg') }}" alt="Avatar" class="avatar"></a>
+                <img src="{{ asset('img/laravel.svg') }}" alt="Avatar" class="avatar">
+            </a>
         </div>
     </footer>
 </body>

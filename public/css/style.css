@@ -337,6 +337,13 @@ input[type="checkbox"]{
     text-align: center;
 }
 
+#preview-upload-image{
+    width: 200px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
 @media (max-width: 600px) {  
     
     .col-md-8{
