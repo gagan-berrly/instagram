@@ -6,21 +6,24 @@
             <div class="col-md-8">
 
                 @include('includes.message')
-
                 <div class="card">
-                    <div class="card-header">Configuracion de mi cuenta</div>
-
+                    <div style="display:flex; align-items:center; justify-content:center; padding:20px;">
+                        <i class="bi bi-translate"></i>@include('includes.translate')
+                    </div>
+                    <div class="card-header">{{__('auth.config_account')}}</div>
+                    
                     <div class="card-body">
                         <form method="POST" action="{{ route('user.update') }}" enctype="multipart/form-data"
-                            aria-label="Configuracion de mi cuenta">
-                            @csrf
-                            <div class="form-group row mb-1 text-right">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Guardar Canvios
-                                    </button>
-                                </div>
+                        aria-label="Configuracion de mi cuenta">
+                        @csrf
+                        
+                        <div class="form-group d-flexrow mb-1 text-right">
+                            <div class="col-md-8 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Guardar Canvios
+                                </button>
                             </div>
+                        </div>
                             
                             <p id="image-preview" style="font-size:18px; font-weight:600;" class="text-center"></p>
                             <div id ="preview-container">

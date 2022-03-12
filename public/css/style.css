@@ -15,6 +15,7 @@ input[type="checkbox"]{
     display: none;
 }
 
+
 form .avatar{
     width: 55px;
     margin-bottom: 15px;
@@ -31,6 +32,11 @@ form .avatar{
     background-attachment: fixed;
 }
 */
+
+#app{
+    margin-top: 4.5rem;
+}
+
 
 .user-post-container {
     display: grid;
@@ -64,6 +70,7 @@ form .avatar{
     color: white;
     text-align: center;
   }
+  
   .user-post-container--post:hover .user-post-hover{
     display: flex;
   }
@@ -451,10 +458,17 @@ input[type="checkbox"]{
     .user-post-container--image img {
         height: 100px;
     }
-    
 
 }
 
+@media only screen and (min-device-width: 450px) and (max-device-width: 601px) {  
+    .user-post-container--image img {
+        height: 150px;
+    }
+    .user-post-container {
+        grid-gap: 10px;
+    }
+}
 @media (min-width: 1024px) {  
 
     .card .card-body .user-information {
@@ -525,10 +539,22 @@ input[type="checkbox"]{
         background-attachment: fixed;
 
     }
-    
+
+    .user-post-container--image img {
+        height: 200px;
+        width: 100%;
+    }
 
 }
 
+@media only screen and (min-device-width: 1250px){  
+    .user-post-container--image img {
+        height: 250px;
+    }
+    .user-post-container {
+        grid-gap: 10px;
+    }
+}
 
 @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {  
 
@@ -612,11 +638,22 @@ input[type="checkbox"]{
     }
 
     .user-post-container--image img {
-        height: 150px;
+        height: 175px;
     }
-    
-
+    .user-post-container {
+        grid-gap: 10px;
+    }
 }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1000px) {  
+    .user-post-container--image img {
+        height: 125px;
+    }
+    .user-post-container {
+        grid-gap: 10px;
+    }
+}
+
 
 @keyframes floating {
     0% { transform: translate(5,  0px); opacity: 0.5;}

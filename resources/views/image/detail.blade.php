@@ -15,7 +15,7 @@
                             </div>
                         @endif
                         <div class="user-nick">
-                            <a href="#">{{ $image->user->nick }}</a>
+                            <a href="{{ route('user.profile', ['id'=>$image->user->id]) }}">{{ $image->user->nick }}</a>
 
                             @if(Auth::user() && Auth::user()->id == $image->user->id)
                             <div class="user-actions">

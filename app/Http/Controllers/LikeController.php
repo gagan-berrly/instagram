@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Like;
@@ -75,11 +76,9 @@ class LikeController extends Controller
 
     public function authUserLikes() {
         $user = Auth::user();
-        $likes = Like::where('user_id',$user->id)
-        ->orderby('id', 'desc')
-        ->get();
+        $likes = Like::where('user_id', '!=',$user->id)
+        ->whereNotNull('created_at')
+        ->limit(5)->orderBy('created_at', 'desc')->get();
         return view('like.index', ['likes'=>$likes]);
     }
-
-
 }

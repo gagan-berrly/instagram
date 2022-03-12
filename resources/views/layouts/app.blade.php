@@ -22,10 +22,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top mb-5">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('welcome') }}" style="color:#00106a; font-size:25px;">
                     Laravel
@@ -52,9 +53,6 @@
                                 <a class="nav-link" href="{{ route('register') }}">{{ __('register.register') }}</a>
                             </li>
                         @else
-                        <li class="nav-item sunshine-user">
-                            <a href="{{route('welcome')}}" class="nav-link"><i class="bi bi-stars"></i></a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('home') }}"><i class="bi bi-house-door-fill"></i></a>
                         </li>
@@ -62,7 +60,8 @@
                             <a class="nav-link" href="{{ route('post.create') }}"><i class="bi bi-plus-square"></i></a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('user.likes')}}" class="nav-link"><i class="bi bi-bookmark-heart"></i></a>
+                            <!--<span class="badge badge-pill badge-danger" style="float:right;margin-bottom:-10px;">1</span>-->
+                            <a href="{{route('user.likes')}}" class="nav-link"><i class="bi bi-chat-square-heart"></i></a>
                         </li>
 
                         <li class="nav-item">
@@ -88,6 +87,12 @@
                                         <span>Configuracion</span>
                                    </a>
 
+                                    <a href="{{route('welcome')}}" class="dropdown-item sunshine-user">
+                                        <i class="bi bi-stars" style="font-size:20px;"></i>
+                                        <span>Me</span>
+                                    </a>
+
+
                                    @if(Auth::user() && Auth::user()->role == 'admin')
                                    <a class="dropdown-item" href=" {{ route('admin.user') }} " target="_blank">
                                         <i class="bi bi-wrench-adjustable-circle-fill" style="font-size:20px;"></i>
@@ -109,8 +114,6 @@
                                 </div>
                             </li>
                         @endguest
-                        
-                        @include('includes.translate')
 
                     </ul>
                 </div>
