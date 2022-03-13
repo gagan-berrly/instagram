@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-8">
                 @include('includes.message')
                 <div class="card border-0">
@@ -68,11 +68,19 @@
                 <br>
                 @endforeach
                 @if(!count($users) <= 0)
-                <button class="btn btn-outline-primary btn-block my-2 mb-3 p-2" style="width:200px;margin:auto;" type="submit">Ver +</button>
+                <div class="col text-center mt-1 mb-1">
+                    <a href="" class="btn btn-primary">{{__('auth.load_more')}}</a>
+                </div>
+                
                 @else
-                No se ha encontrado ningun resultado
+                <div class="alert alert-light"  role="alert">
+                    {{__('auth.user_not_found')}} 
+                  </div>
+                
                 @endif
         </div>
     </div>
+    <hr>
 </div>
+
 @endsection

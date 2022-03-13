@@ -52,7 +52,7 @@ window.addEventListener("load", function () {
     //Buscador
     $('#user-search').submit(function () {
         $(this).attr('action', '/discover/users/' + $('#user-search #search').val());
-
+        
     });
 
     $("#visibility-icon").click(function () {

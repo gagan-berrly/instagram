@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-8">
 
                 @include('includes.message')
@@ -101,25 +101,25 @@
                                 </div>
                             </div>
 
-                            <!---
+                            
                             <div class="form-group row">
                                 <label for="quote"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Biografia') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('auth.bio') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="quote" type="text"
-                                        class="form-control{{-- $errors->has('quote') ? ' is-invalid' : '' }}" name="quote"
+                                        class="form-control{{ $errors->has('quote') ? ' is-invalid' : '' }}" name="quote"
                                         value="{{ Auth::user()->quote }}" required autofocus>
 
                                     @if ($errors->has('quote'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('quote') }}</strong>
                                         </span>
-                                    {{@endif--}}
+                                    @endif
                                 </div>
                             </div>
 
-                            --->
+                            
 
                             <div class="form-group row">
                                 <label for="email"
@@ -142,6 +142,7 @@
                 </div>
             </div>
         </div>
+        <hr>
     </div>
 
     <script type="text/javascript">

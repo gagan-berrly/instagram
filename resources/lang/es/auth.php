@@ -8,6 +8,11 @@ return [
     'show' => 'Ver los',
     'comments' => 'comentarios',
     'like_count' => 'Me gustas',
-    'save' => 'Guardar'
-
+    'save' => 'Guardar',
+    'user_like_notify' => 'le ha dado like a tu foto',
+    'load_more' => 'Load More',
+    'activity' => 'Activity',
+    'user_comments_notify' => 'Comentarios',
+    'user_not_found' => 'No se ha encontrado ningún usuario',
+    'bio' => 'Bio',
 ];

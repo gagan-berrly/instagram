@@ -19,6 +19,11 @@ return [
     'show' => 'View all',
     'comments' => 'comments',
     'like_count' => 'likes',
-    'save' => 'Save'
-
+    'save' => 'Save',
+    'user_like_notify' => 'liked your photo',
+    'load_more' => 'Cargar más',
+    'activity' => 'Actividad',
+    'user_comments_notify' => 'Comments',
+    'user_not_found' => 'No resoults for this username',
+    'bio' => 'Biografía',
 ];
