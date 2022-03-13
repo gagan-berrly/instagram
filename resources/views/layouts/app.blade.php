@@ -28,7 +28,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel fixed-top mb-5">
             <div class="container">
-                <a class="navbar-brand" href="{{ route('welcome') }}" style="color:#00106a; font-size:25px;">
+                <a class="navbar-brand" style="color:#00106a; font-size:25px;">
                     Laravel
                 </a>
                 

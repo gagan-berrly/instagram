@@ -94,12 +94,6 @@ li, li .dropdown-menu{
     background-attachment: fixed;
 }
 
-.shunshine-container__left-gallery{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
 
 
 footer{
@@ -145,12 +139,6 @@ footer{
         border: 0;
     }
 
-    .shunshine-container .shunshine-container__left-gallery{
-        display: none;
-        
-    }
-
-
 
     footer{
         margin-top: 6.8rem;
@@ -179,33 +167,7 @@ footer{
         border: none;
     }
     
-
-    .shunshine-container{
-        width: 90%;
-        margin: 5rem auto;
-        
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
     
-    .shunshine-container__left-gallery{
-        max-width: 850px;
-        padding: 10px;
-        max-height: 325px;
-        margin: auto;
-    }    
-    
-    /*
-    .shunshine-container__left-gallery .floating-users{
-        animation-name: floating;
-        animation-duration: 3s;
-        animation-iteration-count: infinite;
-        animation-timing-function: ease-in-out;
-
-    }
-    */
 
     .image-column {
         flex-grow: 1;

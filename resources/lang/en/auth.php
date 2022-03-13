@@ -16,5 +16,8 @@ return [
     'failed' => 'These credentials do not match our records. Please try again',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'config_account' => 'Settings',
+    'show' => 'View all',
+    'comments' => 'comments',
+    'like_count' => 'likes',
 
 ];
