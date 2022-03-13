@@ -8,5 +8,6 @@ return [
     'show' => 'Veure els',
     'comments' => 'comentaris',
     'like_count' => 'M\'agrada',
+    'save' => 'Guardar'
 
 ];

@@ -7,7 +7,7 @@
 
                 @include('includes.message')
                 <div class="card">
-                    <div style="display:flex; align-items:center; justify-content:center; padding:20px;">
+                    <div style="display:flex; align-items:center; justify-content:center; padding:10px;">
                         <i class="bi bi-translate"></i>@include('includes.translate')
                     </div>
                     <div class="card-header">{{__('auth.config_account')}}</div>
@@ -20,27 +20,22 @@
                         <div class="form-group d-flexrow mb-1 text-right">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Guardar Canvios
+                                    {{__('auth.save')}}
                                 </button>
                             </div>
                         </div>
-                            
-                            <p id="image-preview" style="font-size:18px; font-weight:600;" class="text-center"></p>
+                        
                             <div id ="preview-container">
                             <img id="output" style="display:block; padding:10px; margin-left:auto; margin-right:auto; margin-top:30px; margin-bottom:30px; width:200px; border-radius:50%;"/>
                             </div>
                             
 
                             <div class="form-group row">
-
-                                <label for="image_path"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Current Image') }}</label>
-
+                                <label for="nick" class="col-md-4 col-form-label text-md-right">{{ __('upload.image') }}</label>
                                 <div class="col-md-6">
-                                    @include('includes.avatar')
 
-
-                                    <label for="image_path" class="btn" ><i style="font-size:30px; font-style: normal;" id="upload-btn"class="bi bi-cloud-arrow-up-fill"></i></label>
+                                    <label for="image_path" class="btn btn-outline-dark btn-lg btn-block" ><i style="font-size:25px; font-style: normal;" id="upload-btn"class="bi bi-cloud-arrow-up-fill"></i></label>
+                                    
                                     <input id="image_path" type="file"
                                         class="form-control{{ $errors->has('image_path') ? ' is-invalid' : '' }}"
                                         name="image_path" style="visibility:hidden; position:absolute;" onchange="loadFile(event)">
@@ -51,12 +46,14 @@
                                             <strong>{{ $errors->first('image_path') }}</strong>
                                         </span>
                                     @endif
+                                    
                                 </div>
+                                
                             </div>
 
 
                             <div class="form-group row">
-                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                                <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('register.name') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="name" type="text"
@@ -73,7 +70,7 @@
 
                             <div class="form-group row">
                                 <label for="surname"
-                                    class="col-md-4 col-form-label text-md-right">{{ __('Apellido') }}</label>
+                                    class="col-md-4 col-form-label text-md-right">{{ __('register.surname') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="surname" type="text"
@@ -89,7 +86,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="nick" class="col-md-4 col-form-label text-md-right">{{ __('Nick') }}</label>
+                                <label for="nick" class="col-md-4 col-form-label text-md-right">{{ __('register.nick') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="nick" type="text"
@@ -104,22 +101,25 @@
                                 </div>
                             </div>
 
+                            <!---
                             <div class="form-group row">
                                 <label for="quote"
                                     class="col-md-4 col-form-label text-md-right">{{ __('Biografia') }}</label>
 
                                 <div class="col-md-6">
                                     <input id="quote" type="text"
-                                        class="form-control{{ $errors->has('quote') ? ' is-invalid' : '' }}" name="quote"
+                                        class="form-control{{-- $errors->has('quote') ? ' is-invalid' : '' }}" name="quote"
                                         value="{{ Auth::user()->quote }}" required autofocus>
 
                                     @if ($errors->has('quote'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('quote') }}</strong>
                                         </span>
-                                    @endif
+                                    {{@endif--}}
                                 </div>
                             </div>
+
+                            --->
 
                             <div class="form-group row">
                                 <label for="email"
@@ -145,15 +145,11 @@
     </div>
 
     <script type="text/javascript">
-            var upload = document.getElementById('upload-btn');
-            upload.innerHTML = " Upload Image ";
         var loadFile = function(event) {
             var output = document.getElementById('output');
-            var preview = document.getElementById('image-preview');
             var preview_container = document.getElementById('preview-container');
             output.src = URL.createObjectURL(event.target.files[0]);
             output.style.height = '200px';
-            preview.innerHTML = " Image Preview ";
             preview_container.style.backgroundColor = '#E2E2E2';
             output.onload = function() {
                 output.style.removeProperty('height');

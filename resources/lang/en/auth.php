@@ -19,5 +19,6 @@ return [
     'show' => 'View all',
     'comments' => 'comments',
     'like_count' => 'likes',
+    'save' => 'Save'
 
 ];

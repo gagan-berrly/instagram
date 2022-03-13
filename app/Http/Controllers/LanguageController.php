@@ -13,6 +13,6 @@ class LanguageController extends Controller
         if (array_key_exists($lang, Config::get('languages'))) {
             Session::put('applocale', $lang);
         }
-        return Redirect::back();
+        return Redirect::back()/*->with(['message' => 'Language changed successfully']);*/;
     }
 }
