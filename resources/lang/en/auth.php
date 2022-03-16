@@ -16,14 +16,5 @@ return [
     'failed' => 'These credentials do not match our records. Please try again',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'config_account' => 'Settings',
-    'show' => 'View all',
-    'comments' => 'comments',
-    'like_count' => 'likes',
-    'save' => 'Save',
-    'user_like_notify' => 'liked your photo',
-    'load_more' => 'Cargar más',
-    'activity' => 'Actividad',
-    'user_comments_notify' => 'Comments',
-    'user_not_found' => 'No resoults for this username',
-    'bio' => 'Biografía',
+
 ];

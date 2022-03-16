@@ -30,7 +30,7 @@
 </head>
 
 <body>
-
+    
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -46,46 +46,70 @@
     </header>
 
     @if (Route::has('login'))
+    <div class="shunshine-container">
 
-
-
-        <div class="container card">
-            @auth
-                <div class="card mb-2">
-                    @if (Auth::user()->image)
-                        <div class="logged-user-image">
-                            <img src="{{ route('user.avatar', ['filename' => Auth::user()->image]) }}" alt="Avatar"
-                                class="avatar">
-                        </div>
-                    @else
-                        <div class="container-avatar">
-                            <img src="{{ asset('img/default-user.png') }}" alt="Avatar" class="avatar">
-                        </div>
-                    @endif
-                    <p class="text-center mt-2 mb-2">{{ Auth::user()->nick }}</p>
+        <div class="shunshine-container__left-gallery">
+            <div class="floating-users">
+                <div class="image-column">
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-1.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-2.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-3.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-4.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-5.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-6.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-7.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-7.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-8.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-9.jpg') }}" alt="User">
+                    <img class="posts-image" src="{{ asset('img/profile/user-10.jpg') }}" alt="User">
                 </div>
-                <a class="btn back-btn" href="{{ url('/home') }}">{{ __('welcome.go_back') }}</a>
-                <a class="btn profile-btn mt-2"
-                    href="{{ route('user.profile', ['id' => Auth::user()->id]) }}">{{ __('welcome.profile') }}</a>
-            @else
-                <img src="{{ asset('img/app-icon.png') }}" id="app-icon" class="d-inline-block align-top" alt="">
-                <div>
-                    <h1 class="app_name">Laravel</h1>
-                    <!--<p class="eslogan">{{ __('welcome.slogan') }}</p>-->
-                    <br>
-                </div>
-                <a class="btn btn-primary" href="{{ route('login') }}" disabled>{{ __('login.login') }}</a>
-                <div class="card mt-3 p-2">
-                    <a class="btn btn-link" href="{{ route('register') }}">
-                        {{ __('login.user_not_have_account') }}
-                    </a>
-                </div>
-                @include('includes.translate')
-            @endauth
+            </div>
         </div>
 
-    @endif
+            <div class="container card">
+                @auth
+                    <div class="card mb-2">
+                        @if (Auth::user()->image)
+                            <div class="logged-user-image">
+                                <img src="{{ route('user.avatar', ['filename' => Auth::user()->image]) }}" alt="Avatar"
+                                    class="avatar">
+                            </div>
+                        @else
+                            <div class="container-avatar">
+                                <img src="{{ asset('img/default-user.png') }}" alt="Avatar" class="avatar">
+                            </div>
+                        @endif
+                        <p class="text-center mt-2 mb-2">{{ Auth::user()->nick }}</p>
+                    </div>
+                    <a class="btn back-btn" href="{{ url('/home') }}">{{__('welcome.go_back')}}</a>
+                    <a class="btn profile-btn mt-2" href="{{ route('user.profile', ['id'=>Auth::user()->id]) }}">{{__('welcome.profile')}}</a>
+                @else
+                <img src="{{ asset('img/app-icon.png') }}" id="app-icon" class="d-inline-block align-top" alt="">
+                    <div>
+                        <h1 class="app_name">Laravel</h1>
+                        <!--<p class="eslogan">{{ __('welcome.slogan') }}</p>-->
+                        <br>
+                    </div>
+                    <a class="btn btn-primary" href="{{ route('login') }}" disabled>{{ __('login.login') }}</a>
+                    <div class="card mt-3 p-2">
+                        <a class="btn btn-link" href="{{ route('register') }}">
+                            {{ __('login.user_not_have_account') }}
+                        </a>
+                    </div>
+                    @include('includes.translate')
+                @endauth
+            </div>
+  
 
+        </div>
+    @endif
+    
     <!--
     <a href="https://www.flaticon.com/free-icons/people" target="_blank" title="people icons">Eucalyp - Flaticon</a>
     --->

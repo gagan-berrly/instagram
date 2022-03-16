@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             
             <div class="card mt-3 mb-4 border-0">
-                <h3 class="font-weight-bold">{{__('auth.activity')}}</h3>
+                <h3 class="font-weight-bold">Actividad</h3>
                 <hr>
             </div>
 
@@ -17,7 +17,7 @@
                     <div class="user-notification--target--information">
                         <img src="{{ route('user.avatar', ['filename' =>$like->user->image]) }}" alt="Avatar" class="avatar">
                         <div class="user-notification--message">
-                            <p><b>{{$like->user->nick}}</b> {{__('auth.user_like_notify')}}<br>
+                            <p>{{$like->user->nick}} le ha dado <b>me gusta</b> a tu foto <br>
                                 <span style="opacity:0.5;">{{ \FormatTime::LongTimeFilter($like->created_at) }}</span>
                             </p>
                         </div>
@@ -29,22 +29,18 @@
             </a>
             @endif
             @endforeach
-            <div class="col text-center mt-1 mb-1">
-                <a href="" class="btn btn-primary">{{__('auth.load_more')}}</a>
-            </div>
+            <a href="" class="btn btn-primary">Cargar más</a>
             <hr>
-            
-
             <!--
-
-            <div class="card mb-4 border-0" style="margin-top:6rem;">
-                <h3 class="font-weight-bold"> {{--__('auth.user_comments_notify')--}}</h3>
-                <hr>
+            <div class="card mb-5 border-0 ml-5">
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                      Seguimiento
+                  </blockquote>
+                </div>
             </div>
             --->
-            
         </div>
     </div>
-    <hr>
 </div>
 @endsection

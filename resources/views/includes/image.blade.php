@@ -21,7 +21,7 @@
         <div class="image-container">
             <img src="{{ route('image.file', ['filename' => $image->image_path]) }}" alt=""/>
         </div>
-        <div class="card-body__likes mb-1">
+        <div class="card-body__likes">
 
             <!--Comprovar si el usuario ha dado like    al post---->
             <?php $user_like = false; ?>
@@ -32,16 +32,14 @@
             @endforeach
 
             @if($user_like)
-            <img src="{{asset('img/heart-red.png')}}" data-id="{{$image->id}}"  class="btn-dislike" alt="Like">
+                <img src="{{asset('img/heart-red.png')}}" data-id="{{$image->id}}"  class="btn-dislike" alt="Like">
             @else 
-            <img src="{{asset('img/heart-black.png')}}"  class="btn-like" alt="Dislike">
+                <img src="{{asset('img/heart-black.png')}}"  class="btn-like" alt="Dislike">
             @endif
-            <a href="{{ route('image.detail', ['id' =>$image->id]) }}" class="ml-2"><img src="{{asset('img/comment.png')}}" alt=""></a>
-            
         </div>
         
         <div class="card-body__description">
-            <span class="like-counter" value="{{ count($image->likes) }}"> <b> {{ count($image->likes) }}  {{ __('auth.like_count')}} </b></span>
+            <span class="like-counter" value="{{ count($image->likes) }}"> <b> {{ count($image->likes) }} Me Gustas </b></span>
             <p>
                 <b>
                     <a href="#">
@@ -53,11 +51,9 @@
         </div>
         
         <div>
-            @if(count($image->comments) >= 1)
             <a href="{{ route('image.detail', ['id' =>$image->id]) }}" class="btn btn-sm btn-comments">
-                <b>{{__('auth.show')}} <span>{{ count($image->comments) }}</span> {{__('auth.comments')}} </b>
+                <b>Ver los <span>{{ count($image->comments) }}</span> comentarios </b>
             </a>
-            @endif
 
             <p class="post-uploated-date"><span>{{ \FormatTime::LongTimeFilter($image->created_at) }}</span></p>
         </div>

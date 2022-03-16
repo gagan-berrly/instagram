@@ -22,8 +22,6 @@
             @endforeach
         </div>
     </div>
-
-    <hr>
 </div>
 
 

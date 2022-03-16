@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center">
         <div class="col-md-8">
             
             <div class="card border-0">
@@ -52,7 +52,6 @@
             </div>
         </div>
     </div>
-    <hr>
 </div>
 @endsection
  

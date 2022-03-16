@@ -54,3 +54,28 @@ INSERT INTO users VALUES (NULL, 'user', 'Gagandeep', 'Dass', 'gagan' , 'gagan@gm
 INSERT INTO users VALUES (NULL, 'user', 'Goku', 'Son', 'songoku' , 'goku@gmail.com', 'goku' ,NULL, CURTIME(), CURTIME(), NULL);
 
 INSERT INTO users VALUES (NULL, 'user', 'arshh', 'arshh', 'arshh' , 'arshh@gmail.com', 'arshh' ,NULL, CURTIME(), CURTIME(), NULL);
+
+-- TABLA IMAGES
+INSERT INTO images VALUES(NULL, 1, 'test.jpg', 'descripcion de prueba 1', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 1, 'coches.jpg', 'Coches deportivos', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 1, 'moviles.jpg', 'Moviles gama alta en 2022', CURTIME(), CURTIME());
+INSERT INTO images VALUES(NULL, 3, 'ordenador.jpg', 'Ordenador Gaming', CURTIME(), CURTIME());
+
+-- TABLA COMMENTS
+INSERT INTO comments VALUES (NULL, 1, 4, 'Buena imagen', CURTIME(), CURTIME());
+INSERT INTO comments VALUES (NULL, 2, 1, 'Foto tomada con el nuevo iphone', CURTIME(), CURTIME());
+INSERT INTO comments VALUES (NULL, 2, 4, 'Que buena foto te ha salido!', CURTIME(), CURTIME());
+
+-- TABLA LIKES
+
+INSERT INTO likes VALUES(NULL, 1, 4, CURTIME(), CURTIME());
+INSERT INTO likes VALUES(NULL, 2, 4, CURTIME(), CURTIME());
+INSERT INTO likes VALUES(NULL, 3, 1, CURTIME(), CURTIME());
+INSERT INTO likes VALUES(NULL, 3, 2, CURTIME(), CURTIME());
+INSERT INTO likes VALUES(NULL, 2, 4, CURTIME(), CURTIME());
+
+
+SELECT * FROM users;
+SELECT * FROM images;
+SELECT * FROM comments;
+SELECT * FROM likes;

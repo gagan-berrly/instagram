@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center">
         <div class="col-md-10 user-post-detail-container">
             @include('includes.message')
                   
@@ -119,6 +119,5 @@
 
         </div>
     </div>
-    <hr>
 </div>
 @endsection
