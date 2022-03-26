@@ -16,14 +16,14 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
         
-        for ($i=0; $i <=75 ; $i++) { 
+        for ($i=0; $i <=3; $i++) { 
             $faker = Factory::create('es_ES');
             DB::table('users')->insert([
                 'role' => 'user',
-                'name' => $faker->firstName(),
+                'name' => $faker->firstNameFemale(),
                 'surname' => $faker->lastName,
-                'nick' => strtolower($faker->firstName().rand(1,100)),
-                'quote' => $faker->realText(rand(50,100)),
+                'nick' => strtolower($faker->firstNameFemale().rand(1,100)),
+                'quote' => null,
                 'email' => $faker->email,
                 'password' => Hash::make('password'),
                 'created_at' => $faker->dateTimeThisMonth(),

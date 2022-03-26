@@ -37,8 +37,8 @@
 
     <section id="credits">
         <div>
-            <img src="{{ asset('img/flaticon/instagram.png') }}" alt="Avatar" width=100 class="avatar">
             <a href="https://www.flaticon.es/iconos-gratis/instagram" title="instagram iconos">Instagram iconos creados por Laisa Islam Ani - Flaticon</a>
+            <a href="https://www.flaticon.com/free-icons/ui" title="ui icons">Ui icons created by Tempo_doloe - Flaticon</a>
         </div>
     </section>
 

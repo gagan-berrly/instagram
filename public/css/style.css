@@ -164,6 +164,9 @@ form .avatar{
 
 .image-container img{
     width: 100%;
+    height: auto;
+    object-fit: cover;
+
 }
 
 .user-post .card-body{
@@ -403,6 +406,10 @@ input[type="checkbox"]{
 }
 
 @media (max-width: 600px) {  
+
+    .activity-text{
+        margin-left: 20px;
+    }
     
     .col-md-8{
         padding: 0;
@@ -586,6 +593,10 @@ input[type="checkbox"]{
 
 @media only screen and (min-device-width: 601px) and (max-device-width: 1024px) {  
 
+    .activity-text{
+        margin-left: 25px;
+    }
+
     .navbar-nav {
         display: flex;
         flex-direction: row;
@@ -678,3 +689,10 @@ input[type="checkbox"]{
     50%  { transform: translate(10px, 3px); opacity: 1;}
     100%  { transform: translate(-5, -0px); opacity: 0.5;}   
 }
+
+
+
+
+
+
+/*pkefnoqe*/

@@ -5,13 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 @include('includes.message')
-                <div class="card border-0">
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <b>{{ Auth::user()->name }}</b> conecta con gente!
-                        </blockquote>
-                    </div>
-                </div>
                 <br>
 
                 <form class="form-inline mb-4" method="GET" action="{{ route('user.users') }}" id="user-search">
@@ -70,7 +63,7 @@
                 @if(!count($users) <= 0)
                 <button class="btn btn-outline-primary btn-block my-2 mb-3 p-2" style="width:200px;margin:auto;" type="submit">Ver +</button>
                 @else
-                No se ha encontrado ningun resultado
+                <p class="text-center"><b>No se ha encontrado ningun resultado</b></p>
                 @endif
         </div>
     </div>

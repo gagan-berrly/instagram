@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-10 user-post-detail-container">
+        <div class="col-md-8 user-post-detail-container">
             @include('includes.message')
                   
                 <div class="card user-post post_image_details">
@@ -37,7 +37,8 @@
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                                        <a href="{{ route('image.delete', ['id' => $image->id]) }}" class="btn btn-danger">Borrar</a>
+                                        <button type="button" class="btn btn-danger" ><a href="{{ route('image.delete', ['id' => $image->id]) }}">Borrar</a></button>
+                                        
                                         </button>
                                         </div>
                                     </div>

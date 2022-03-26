@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-bottom: 60px;
 }
 
 .user-notification .user-notification--target--information img{
@@ -23,8 +22,6 @@ a{
 }
 
 .user-notification .user-notification--target_image img{
-    width: 70px;
-    height: 70px;
     object-fit: cover;
 }
 
@@ -34,12 +31,36 @@ a{
         width: 200px;
     }
 
+    .user-notification--message p{
+        font-size: 13px;
+    }
+
+    .user-notification .user-notification--target_image img{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .user-notification{
+        margin-bottom: 7px;
+    }
+    
+
     
 }
 
-@media (min-width: 1024px) {  
+@media (min-width: 601px) {  
     .user-notification--message {
         width:400px;
+    }
+    .user-notification .user-notification--target_image img{
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+    }
+
+    .user-notification{
+        margin-bottom: 30px;
     }
 
     

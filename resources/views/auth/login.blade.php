@@ -18,7 +18,7 @@
                                 <div class="col-md-6">
                                     <input id="email" type="email"
                                         class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                        value="{{ old('email') }}" required autofocus>
+                                        value="{{ old('email') }}" placeholder="{{__('login.email')}}" required autofocus>
                                 </div>
                             </div>
 
@@ -30,7 +30,7 @@
                                 <div class="col-md-6">
                                     <input id="password" type="password"
                                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
-                                        name="password" required>
+                                        name="password" placeholder="{{__('login.password')}}" required>
                                 </div>
 
                                 <div class="show-password">
@@ -58,22 +58,6 @@
                                     </span>
                                 @endif
                             </div>
-
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                            {{ old('remember') ? 'checked' : '' }}>
-
-                                        <!--
-                                                        <label class="form-check-label" for="remember">
-                                                            {{-- __('Recordar datos') --}}
-                                                        </label>
-                                                        --->
-                                    </div>
-                                </div>
-                            </div>
-
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">

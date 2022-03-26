@@ -140,5 +140,6 @@ class ImageController extends Controller
             'message' => 'Has actualizado la descripción de tu post'
         ]);
 
+        
     }
 }

@@ -43,7 +43,8 @@
 
                         <div class="form-group row">
                             <div class="col-md-6">
-                                <input type="submit" class="btn btn-primary" value="Guardar Canvios">
+                                <input type="submit" class="btn btn-success" value="Guardar Canvios">
+                                <a class="btn btn-danger" href="{{route('image.detail',['id' =>$image->id])}}">Cancelar</a>
                             </div>
                         </div>
 
